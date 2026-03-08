@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/auth/guards/auth.guard';
 
 export const routes: Routes = [
   // 1. RUTAS DE AUTENTICACIÓN (Públicas)
@@ -19,14 +20,13 @@ export const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
-
-  // 2. RUTAS DE LA APLICACIÓN (Privadas - Las protegeremos luego con Guards)
   {
     path: '',
     loadComponent: () =>
       import('./layout/main-layout/main-layout.component').then(
         (m) => m.MainLayoutComponent,
       ),
+    canActivate: [authGuard],
     children: [
       {
         path: 'dashboard',
@@ -38,7 +38,5 @@ export const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
-
-  // 3. WILDCARD (Si escriben una URL que no existe, los mandamos al login)
   { path: '**', redirectTo: 'auth/login' },
 ];
