@@ -1,16 +1,44 @@
 import { Routes } from '@angular/router';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
-import { DashboardComponent } from './features/dashboard/pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
+  // 1. RUTAS DE AUTENTICACIÓN (Públicas)
   {
-    path: '',
-    component: MainLayoutComponent,
+    path: 'auth',
+    loadComponent: () =>
+      import('./layout/auth-layout/auth-layout.component').then(
+        (m) => m.AuthLayoutComponent,
+      ),
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'login',
+        loadComponent: () =>
+          import('./features/auth/pages/login/login.component').then(
+            (m) => m.LoginComponent,
+          ),
+      },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
-  // { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: 'dashboard' },
+
+  // 2. RUTAS DE LA APLICACIÓN (Privadas - Las protegeremos luego con Guards)
+  {
+    path: '',
+    loadComponent: () =>
+      import('./layout/main-layout/main-layout.component').then(
+        (m) => m.MainLayoutComponent,
+      ),
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/dashboard/pages/dashboard/dashboard.component').then(
+            (m) => m.DashboardComponent,
+          ),
+      },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    ],
+  },
+
+  // 3. WILDCARD (Si escriben una URL que no existe, los mandamos al login)
+  { path: '**', redirectTo: 'auth/login' },
 ];
