@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
 export class AuthService {
   private router = inject(Router);
 
-  // 🔥 ESTADO REACTIVO: signal guarda el usuario actual. Inicia en null.
+  //signal guarda el usuario actual. Inicia en null.
   private currentUserSignal = signal<{ email: string } | null>(null);
 
-  // 🔥 ESTADO DERIVADO: computed evalúa si hay un usuario. Si currentUserSignal cambia, esto se actualiza solo.
+  //computed evalúa si hay un usuario. Si currentUserSignal cambia, esto se actualiza solo.
   isLoggedIn = computed(() => this.currentUserSignal() !== null);
 
   constructor() {
