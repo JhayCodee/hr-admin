@@ -34,6 +34,13 @@
       "department": "Ventas",
       "status": "inactive",
       "id": "efa03b7a-af91-438a-bff6-a853f97c2d46"
+    },
+    {
+      "id": "df7ece3c-71c3-455d-96e1-0933356109b1",
+      "name": "aaa",
+      "position": "a",
+      "department": "RRHH",
+      "status": "active"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
