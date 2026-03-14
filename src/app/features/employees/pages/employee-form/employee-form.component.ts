@@ -20,6 +20,8 @@ export class EmployeeFormComponent implements OnInit {
   // Estados
   isEditMode = signal(false);
   currentId = signal<string | null>(null);
+  //Signal para controlar si estamos enviando datos
+  isSubmitting = signal(false);
 
   // Nuestro formulario tipado
   employeeForm = this.fb.nonNullable.group({
@@ -68,21 +70,34 @@ export class EmployeeFormComponent implements OnInit {
       return;
     }
 
+    // 🔥 Activamos el estado de carga
+    this.isSubmitting.set(true);
+
     const formData = this.employeeForm.getRawValue();
 
     if (this.isEditMode() && this.currentId()) {
-      // MODO EDICIÓN
       this.employeeService
         .updateEmployee(this.currentId()!, formData)
         .subscribe({
-          next: () => this.router.navigate(['/empleados']),
-          error: (err) => console.error(err),
+          next: () => {
+            this.isSubmitting.set(false); // Apagamos
+            this.router.navigate(['/empleados']);
+          },
+          error: (err) => {
+            this.isSubmitting.set(false); // Apagamos en caso de error
+            console.error(err);
+          },
         });
     } else {
-      // MODO CREACIÓN
       this.employeeService.createEmployee(formData).subscribe({
-        next: () => this.router.navigate(['/empleados']),
-        error: (err) => console.error(err),
+        next: () => {
+          this.isSubmitting.set(false); // Apagamos
+          this.router.navigate(['/empleados']);
+        },
+        error: (err) => {
+          this.isSubmitting.set(false); // Apagamos
+          console.error(err);
+        },
       });
     }
   }

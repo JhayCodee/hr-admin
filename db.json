@@ -15,11 +15,25 @@
       "id": "3"
     },
     {
-      "id": "8a2a9014-a844-400d-b24a-7b180d32352c",
       "name": "Luis Carlos",
       "position": "Frontend dev",
       "department": "IT",
+      "status": "active",
+      "id": "8a2a9014-a844-400d-b24a-7b180d32352c"
+    },
+    {
+      "id": "f67bbf6d-d3bb-48f9-acf4-bfd40c0adfe4",
+      "name": "test",
+      "position": "test",
+      "department": "RRHH",
       "status": "active"
+    },
+    {
+      "name": "prueba",
+      "position": "prueba",
+      "department": "Ventas",
+      "status": "active",
+      "id": "efa03b7a-af91-438a-bff6-a853f97c2d46"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
