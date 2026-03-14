@@ -8,11 +8,13 @@ import { Employee } from '../models/employee.interface';
 })
 export class EmployeeService {
   private http = inject(HttpClient);
-  // URL JSON Server
   private apiUrl = 'http://localhost:3000/employees';
 
-  // Retorna un Observable con un arreglo de empleados
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.apiUrl);
+  }
+
+  deleteEmployee(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

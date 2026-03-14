@@ -11,6 +11,10 @@
   <div
     class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
   >
-    <app-employee-table [data]="employees()" />
+    <app-employee-table
+      [data]="employees()"
+      (onDelete)="handleDelete($event)"
+      (onEdit)="handleEdit($event)"
+    />
   </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+// Importa 'output' además de 'input'
+import { Component, input, output } from '@angular/core';
 import { Employee } from '../../models/employee.interface';
 
 @Component({
@@ -9,7 +10,8 @@ import { Employee } from '../../models/employee.interface';
   styleUrl: './employee-table.component.scss',
 })
 export class EmployeeTableComponent {
-  // 🔥 MAGIA MODERNA: input() reemplaza al viejo @Input().
-  // Ahora los datos que recibimos también son un Signal, haciendo la app extremadamente rápida.
   data = input<Employee[]>([]);
+
+  onEdit = output<Employee>(); // Emitiremos el empleado completo para editarlo
+  onDelete = output<string>(); // Emitiremos solo el ID para borrarlo
 }
