@@ -1,27 +1,54 @@
-# HrAdmin
+# 🏢 HR-Admin Pro (Angular 18+)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+Un panel administrativo moderno y escalable construido con **Angular 18**, enfocado en buenas prácticas, arquitectura Frontend y experiencia de usuario.
 
-## Development server
+🔴 **EN VIVO:** [Link de Vercel pendiente...]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge&logo=reactivex&logoColor=white)
 
-## Code scaffolding
+## ⚠️ Nota Importante sobre el Proyecto (Frontend Focus)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este proyecto fue desarrollado exclusivamente con fines de aprendizaje y demostración de habilidades **puramente Frontend**. Por lo tanto, cuenta con las siguientes consideraciones para su evaluación:
 
-## Build
+1. **Autenticación Simulada:** No existe un sistema de usuarios real. **El login permite el acceso con cualquier combinación de correo y contraseña** para que puedas evaluar el Dashboard y la interfaz directamente.
+2. **Sin Base de Datos Real:** El sistema no está conectado a un backend productivo. El CRUD de empleados (Crear, Leer, Actualizar, Eliminar) interactúa con una **Mock API** (MockAPI.io en producción y `json-server` en desarrollo) para simular la latencia y el flujo de datos real.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Características Técnicas Destacadas
 
-## Running unit tests
+- **Arquitectura Moderna:** Uso exclusivo de _Standalone Components_.
+- **Reactividad:** Gestión de estado derivada con _Signals_ (`computed`, `effect`) y flujo unidireccional.
+- **Seguridad Frontend:** Rutas protegidas mediante _Guards Funcionales_ e _Interceptores HTTP_.
+- **Smart/Dumb Pattern:** Separación clara entre componentes contenedores (lógica) y presentacionales (UI).
+- **UX/UI:** Diseño responsivo con Tailwind CSS, retroalimentación visual (Toasts, Spinners) e integración de _Chart.js_.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Ejecución Local
 
-## Running end-to-end tests
+1. Clona el repositorio:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+ git clone [https://github.com/TU_USUARIO/hr-admin.git](https://github.com/TU_USUARIO/hr-admin.git)
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Instala las dependencias:
+
+```bash
+ npm install
+
+```
+
+3. Inicia el servidor local (Mock Backend de desarrollo):
+
+```bash
+npm run backend
+
+```
+
+4. Inicia Angular:
+
+```bash
+ ng serve
+
+```
