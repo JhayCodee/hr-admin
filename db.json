@@ -1,0 +1,25 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Ana García",
+      "position": "Desarrolladora Frontend",
+      "department": "IT",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Carlos López",
+      "position": "Gerente de Ventas",
+      "department": "Ventas",
+      "status": "inactive"
+    },
+    {
+      "id": "3",
+      "name": "María Fernández",
+      "position": "Diseñadora UX/UI",
+      "department": "Diseño",
+      "status": "active"
+    }
+  ]
+}

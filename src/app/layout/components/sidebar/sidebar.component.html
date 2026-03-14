@@ -9,14 +9,21 @@
     <ul class="space-y-1 px-2">
       <li>
         <a
-          class="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-800 text-blue-400 cursor-pointer"
+          routerLink="/dashboard"
+          routerLinkActive="bg-slate-800 text-blue-400"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 transition-colors cursor-pointer"
         >
-          <span>🏠</span> <span class="font-medium">Dashboard</span>
+          <span>🏠</span>
+          <span class="font-medium">Dashboard</span>
         </a>
       </li>
+
       <li>
         <a
-          class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-300 transition-colors cursor-pointer"
+          routerLink="/empleados"
+          routerLinkActive="bg-slate-800 text-blue-400"
+          class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-slate-800 transition-colors cursor-pointer"
         >
           <span>👥</span>
           <span class="font-medium">Empleados</span>

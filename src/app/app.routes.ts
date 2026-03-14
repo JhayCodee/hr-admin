@@ -35,6 +35,13 @@ export const routes: Routes = [
             (m) => m.DashboardComponent,
           ),
       },
+      {
+        path: 'empleados',
+        loadComponent: () =>
+          import('./features/employees/pages/employee-list/employee-list.component').then(
+            (m) => m.EmployeeListComponent,
+          ),
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },

@@ -1,0 +1,65 @@
+<div class="overflow-x-auto">
+  <table class="w-full text-left border-collapse">
+    <thead>
+      <tr
+        class="bg-gray-50 border-b border-gray-100 text-sm text-gray-500 uppercase tracking-wider"
+      >
+        <th class="py-4 px-6 font-medium">Nombre</th>
+        <th class="py-4 px-6 font-medium">Cargo</th>
+        <th class="py-4 px-6 font-medium">Departamento</th>
+        <th class="py-4 px-6 font-medium">Estado</th>
+        <th class="py-4 px-6 font-medium text-right">Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      @for (employee of data(); track employee.id) {
+        <tr class="hover:bg-gray-50 transition-colors">
+          <td class="py-4 px-6">
+            <div class="font-medium text-gray-800">{{ employee.name }}</div>
+          </td>
+
+          <td class="py-4 px-6 text-gray-600">
+            {{ employee.position }}
+          </td>
+
+          <td class="py-4 px-6 text-gray-600">
+            {{ employee.department }}
+          </td>
+
+          <td class="py-4 px-6">
+            @if (employee.status === "active") {
+              <span
+                class="px-3 py-1 text-xs font-medium text-emerald-700 bg-emerald-100 rounded-full"
+                >Activo</span
+              >
+            } @else {
+              <span
+                class="px-3 py-1 text-xs font-medium text-rose-700 bg-rose-100 rounded-full"
+                >Inactivo</span
+              >
+            }
+          </td>
+
+          <td class="py-4 px-6 text-right">
+            <button
+              class="text-blue-600 hover:text-blue-800 font-medium text-sm mr-3 transition-colors"
+            >
+              Editar
+            </button>
+            <button
+              class="text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5" class="py-8 text-center text-gray-500">
+            No se encontraron empleados.
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
