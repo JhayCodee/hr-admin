@@ -2,16 +2,18 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { EmployeeTableComponent } from '../../components/employee-table/employee-table.component';
 import { Employee } from '../../models/employee.interface';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
-  imports: [EmployeeTableComponent],
+  imports: [EmployeeTableComponent, RouterLink],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.scss',
 })
 export class EmployeeListComponent implements OnInit {
   private employeeService = inject(EmployeeService);
+  private router = inject(Router);
 
   // Usamos un signal normal (Writable) que inicia vacío
   employees = signal<Employee[]>([]);
@@ -42,6 +44,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   handleEdit(employee: Employee) {
-    console.log('Navegar al formulario de edición con:', employee);
+    this.router.navigate(['/empleados/editar', employee.id]);
   }
 }

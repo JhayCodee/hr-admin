@@ -1,17 +1,24 @@
 {
   "employees": [
     {
-      "id": "2",
       "name": "Carlos López",
-      "position": "Gerente de Ventas",
-      "department": "Ventas",
-      "status": "inactive"
+      "position": "Analista",
+      "department": "IT",
+      "status": "active",
+      "id": "2"
     },
     {
-      "id": "3",
-      "name": "María Fernández",
+      "name": "María Belen Fernández",
       "position": "Diseñadora UX/UI",
-      "department": "Diseño",
+      "department": "IT",
+      "status": "inactive",
+      "id": "3"
+    },
+    {
+      "id": "8a2a9014-a844-400d-b24a-7b180d32352c",
+      "name": "Luis Carlos",
+      "position": "Frontend dev",
+      "department": "IT",
       "status": "active"
     }
   ],

@@ -42,6 +42,20 @@ export const routes: Routes = [
             (m) => m.EmployeeListComponent,
           ),
       },
+      {
+        path: 'empleados/nuevo',
+        loadComponent: () =>
+          import('./features/employees/pages/employee-form/employee-form.component').then(
+            (m) => m.EmployeeFormComponent,
+          ),
+      },
+      {
+        path: 'empleados/editar/:id',
+        loadComponent: () =>
+          import('./features/employees/pages/employee-form/employee-form.component').then(
+            (m) => m.EmployeeFormComponent,
+          ),
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ],
   },
