@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
 import { Employee } from '../../models/employee.interface';
+import { ToastService } from '../../../../core/services/toast/toast.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -16,7 +17,7 @@ export class EmployeeFormComponent implements OnInit {
   private employeeService = inject(EmployeeService);
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-
+  private toastService = inject(ToastService);
   // Estados
   isEditMode = signal(false);
   currentId = signal<string | null>(null);
@@ -81,22 +82,26 @@ export class EmployeeFormComponent implements OnInit {
         .subscribe({
           next: () => {
             this.isSubmitting.set(false); // Apagamos
+            this.toastService.show('Empleado actualizado con éxito', 'success');
             this.router.navigate(['/empleados']);
           },
           error: (err) => {
             this.isSubmitting.set(false); // Apagamos en caso de error
             console.error(err);
+            this.toastService.show('Error al actualizar el empleado', 'error');
           },
         });
     } else {
       this.employeeService.createEmployee(formData).subscribe({
         next: () => {
           this.isSubmitting.set(false); // Apagamos
+          this.toastService.show('Empleado creado correctamente', 'success');
           this.router.navigate(['/empleados']);
         },
         error: (err) => {
           this.isSubmitting.set(false); // Apagamos
           console.error(err);
+          this.toastService.show('Error al crear el empleado', 'error');
         },
       });
     }

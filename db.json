@@ -32,7 +32,7 @@
       "name": "prueba",
       "position": "prueba",
       "department": "Ventas",
-      "status": "active",
+      "status": "inactive",
       "id": "efa03b7a-af91-438a-bff6-a853f97c2d46"
     }
   ],
