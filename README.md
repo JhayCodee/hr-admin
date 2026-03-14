@@ -1,8 +1,10 @@
+
+
 # 🏢 HR-Admin Pro (Angular 18+)
 
 Un panel administrativo moderno y escalable construido con **Angular 18**, enfocado en buenas prácticas, arquitectura Frontend y experiencia de usuario.
 
-🔴 **EN VIVO:** [Link de Vercel pendiente...]
+🔴 **EN VIVO:** [HR - ADMIN](https://hr-admin-sandy.vercel.app?_vercel_share=fBy8hUh3mQ9ZR3pBl7gIHG0rl49VXP2n)
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -17,38 +19,39 @@ Este proyecto fue desarrollado exclusivamente con fines de aprendizaje y demostr
 
 ## 🚀 Características Técnicas Destacadas
 
-- **Arquitectura Moderna:** Uso exclusivo de _Standalone Components_.
-- **Reactividad:** Gestión de estado derivada con _Signals_ (`computed`, `effect`) y flujo unidireccional.
-- **Seguridad Frontend:** Rutas protegidas mediante _Guards Funcionales_ e _Interceptores HTTP_.
+- **Arquitectura Moderna:** Uso exclusivo de *Standalone Components*.
+- **Reactividad:** Gestión de estado derivada con *Signals* (`computed`, `effect`) y flujo unidireccional.
+- **Seguridad Frontend:** Rutas protegidas mediante *Guards Funcionales* e *Interceptores HTTP*.
 - **Smart/Dumb Pattern:** Separación clara entre componentes contenedores (lógica) y presentacionales (UI).
-- **UX/UI:** Diseño responsivo con Tailwind CSS, retroalimentación visual (Toasts, Spinners) e integración de _Chart.js_.
+- **UX/UI:** Diseño responsivo con Tailwind CSS, retroalimentación visual (Toasts, Spinners) e integración de *Chart.js*.
 
 ## 🛠️ Ejecución Local
 
 1. Clona el repositorio:
-
 ```bash
- git clone [https://github.com/TU_USUARIO/hr-admin.git](https://github.com/TU_USUARIO/hr-admin.git)
+ git clone https://github.com/JhayCodee/hr-admin
 
 ```
 
 2. Instala las dependencias:
-
 ```bash
  npm install
 
 ```
 
-3. Inicia el servidor local (Mock Backend de desarrollo):
 
+3. Inicia el servidor local (Mock Backend de desarrollo):
 ```bash
 npm run backend
 
 ```
 
-4. Inicia Angular:
 
+4. Inicia Angular:
 ```bash
  ng serve
 
 ```
+
+
+
