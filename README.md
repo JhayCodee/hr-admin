@@ -4,7 +4,7 @@
 
 Un panel administrativo moderno y escalable construido con **Angular 18**, enfocado en buenas prácticas, arquitectura Frontend y experiencia de usuario.
 
-🔴 **EN VIVO:** [HR - ADMIN](https://hr-admin-sandy.vercel.app?_vercel_share=fBy8hUh3mQ9ZR3pBl7gIHG0rl49VXP2n)
+🔴 **EN VIVO:** [HR - ADMIN](https://hr-admin-sandy.vercel.app/auth/login)
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
